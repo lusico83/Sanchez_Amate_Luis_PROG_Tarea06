@@ -2,7 +2,7 @@
 package tarea06;
 
 import mvc.dominio.Cliente;
-import tarea06.AlquilerVehiculos;
+import modelo.dao.Alquileres;
 import mvc.dominio.Alquiler;
 import mvc.dominio.ExcepcionAlquilerVehiculos;
 import mvc.dominio.Turismo;
@@ -16,7 +16,7 @@ public class Principal {
         
 
         //Creamos un array de AlquilerVehiculos con los maximos de campos que establecimos en esa clase
-        AlquilerVehiculos misAlquileres=new AlquilerVehiculos();
+        Alquileres misAlquileres=new Alquileres();
         
         //Precargamos 3 direcciones postales para clientes y 3 turismos para poder hacer pruebas mas agilmente
         DireccionPostal direccion1 = new DireccionPostal("Calle Granada","Almería","04008");
