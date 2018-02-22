@@ -6,6 +6,7 @@ import tarea06.AlquilerVehiculos;
 import mvc.dominio.Alquiler;
 import mvc.dominio.ExcepcionAlquilerVehiculos;
 import mvc.dominio.Turismo;
+import mvc.dominio.DireccionPostal;
 import utilidades.Entrada;
 
 
@@ -17,10 +18,13 @@ public class Principal {
         //Creamos un array de AlquilerVehiculos con los maximos de campos que establecimos en esa clase
         AlquilerVehiculos misAlquileres=new AlquilerVehiculos();
         
-        //Precargamos 3 clientes y 3 turismos para poder hacer pruebas mas agilmente
-        Cliente cliente1 = new Cliente("Luis", "11111111A", "Calle Granada", "Almería", "04008");
-	Cliente cliente2 = new Cliente("Pepe", "22222222B", "Calle Saturno", "Huércal de Almería", "04230");
-        Cliente cliente3 = new Cliente("Maria", "33333333C", "Calle Zacatin", "Bentarique", "04569");
+        //Precargamos 3 direcciones postales para clientes y 3 turismos para poder hacer pruebas mas agilmente
+        DireccionPostal direccion1 = new DireccionPostal("Calle Granada","Almería","04008");
+        DireccionPostal direccion2 = new DireccionPostal("Calle Saturno", "Huércal de Almería", "04230");
+        DireccionPostal direccion3 = new DireccionPostal("Calle Zacatin", "Bentarique", "04569");
+        Cliente cliente1 = new Cliente("Luis", "11111111A",direccion1);
+	Cliente cliente2 = new Cliente("Pepe", "22222222B", direccion2);
+        Cliente cliente3 = new Cliente("Maria", "33333333C", direccion3);
 	misAlquileres.addCliente(cliente1);
 	misAlquileres.addCliente(cliente2);
         misAlquileres.addCliente(cliente3);
@@ -62,6 +66,7 @@ public class Principal {
                             
 				case 1:
 					Cliente nuevoCliente = null;
+                                        DireccionPostal nuevaDireccion=null;
 					do {
 						System.out.println("\nAñadir cliente");
 						System.out.println("*********************");
@@ -76,7 +81,8 @@ public class Principal {
 						System.out.print("Código postal: ");
 						String codigoPostal = Entrada.cadena();
 						try {
-							nuevoCliente = new Cliente(nombre, dni, direccion, localidad, codigoPostal);
+                                                        nuevaDireccion= new DireccionPostal(direccion,localidad,codigoPostal);
+							nuevoCliente = new Cliente(nombre, dni, nuevaDireccion);
 						} catch (ExcepcionAlquilerVehiculos e) {
 							System.out.printf("ERROR: %s%n%n", e.getMessage());
 							System.out.println("Vuelve a introducir los datos de forma correcta");

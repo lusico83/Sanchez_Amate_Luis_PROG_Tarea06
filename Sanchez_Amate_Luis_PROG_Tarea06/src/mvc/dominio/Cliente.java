@@ -8,9 +8,7 @@ public class Cliente {
     
     private String nombre;
     private String dni;
-    private String direccion;
-    private String localidad;
-    private String codigoPostal;
+    private DireccionPostal direccionPostal;
     private int identificador;
     private static int numClientes=0;
   
@@ -20,16 +18,14 @@ public class Cliente {
         
         nombre=cliente.getNombre();
         dni=cliente.getDni();
-        direccion=cliente.getDireccion();
-        localidad=cliente.getLocalidad();
-        codigoPostal=cliente.getCodigoPostal();
+        direccionPostal=cliente.getDireccionPostal();
         identificador=cliente.getIdentificador();        
         
     }
     
   //Constructor con parametros
   
-    public Cliente(String nombre, String dni, String direccion, String localidad, String codigoPostal){
+    public Cliente(String nombre, String dni, DireccionPostal direccionPostal){
         
         this.nombre=nombre;
         
@@ -38,14 +34,7 @@ public class Cliente {
         else
             throw new ExcepcionAlquilerVehiculos("DNI no válido");
         
-        
-        this.direccion=direccion;
-        this.localidad=localidad;
-        
-        if (compruebaCodigoPostal(codigoPostal))
-            this.codigoPostal=codigoPostal;
-        else
-            throw new ExcepcionAlquilerVehiculos("Codigo Postal no válido");
+        this.direccionPostal=direccionPostal;
         
         numClientes=numClientes+1;
         identificador=numClientes;
@@ -75,17 +64,10 @@ public class Cliente {
 		return dni;
 	}
 
-	public String getDireccion() {
-		return direccion;
+	public DireccionPostal getDireccionPostal() {
+		return direccionPostal;
 	}
-	
-	public String getLocalidad() {
-		return localidad;
-	}
-	
-	public String getCodigoPostal() {
-		return codigoPostal;
-	}
+
 	
 	public int getIdentificador() {
 		return identificador;
@@ -93,7 +75,7 @@ public class Cliente {
         
         
         public String toString(){
-                return String.format("Nombre: %s DNI: %s Direccion: %s Localidad: %s Codigo Postal: %s Identificador %s", nombre, dni, direccion, localidad, codigoPostal, identificador);
+                return String.format("Nombre: %s DNI: %s Direccion: %s Localidad: %s Codigo Postal: %s Identificador %s", nombre, dni, direccionPostal, identificador);
         }
     
       
