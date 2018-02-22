@@ -1,6 +1,10 @@
 
 package tarea06;
 
+import mvc.dominio.ExcepcionAlquilerVehiculos;
+import mvc.dominio.Alquiler;
+import mvc.dominio.Turismo;
+import mvc.dominio.Cliente;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

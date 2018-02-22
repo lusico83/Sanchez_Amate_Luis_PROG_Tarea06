@@ -1,5 +1,5 @@
 
-package tarea06;
+package mvc.dominio;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

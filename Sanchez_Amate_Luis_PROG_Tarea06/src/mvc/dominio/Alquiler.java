@@ -1,6 +1,8 @@
 
-package tarea06;
+package mvc.dominio;
 
+import mvc.dominio.Turismo;
+import mvc.dominio.Cliente;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
