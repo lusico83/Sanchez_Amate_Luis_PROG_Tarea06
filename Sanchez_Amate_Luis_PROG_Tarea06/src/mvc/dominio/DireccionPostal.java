@@ -16,8 +16,8 @@ public class DireccionPostal {
 		codigoPostal = direccionPostal.getCodigoPostal();
 	}
 	
-	public DireccionPostal(String calle, String localidad, String codigoPostal) {
-		setCalle(calle);
+	public DireccionPostal(String direccion, String localidad, String codigoPostal) {
+		setDireccion(direccion);
 		setLocalidad(localidad);
 		setCodgioPostal(codigoPostal);
 	}
@@ -36,8 +36,8 @@ public class DireccionPostal {
 			throw new ExcepcionAlquilerVehiculos("Localidad no válida");
 	}
 
-	private void setCalle(String calle) {
-		if (calle != null && !calle.equals(""))
+	private void setDireccion(String direccion) {
+		if (direccion != null && !direccion.equals(""))
 			this.direccion = direccion;
 		else 
 			throw new ExcepcionAlquilerVehiculos("Dirección no válida");

@@ -74,7 +74,7 @@ private int buscarIndiceTurismo(String matricula) {
 
 // Metodo para crear un nuevo alquiler tras buscar hueco vacio y comprobar que es posible almacenarlo
 
-public void abrirTrabajo(Cliente cliente, Turismo turismo) {
+public void abrirAlquiler(Cliente cliente, Turismo turismo) {
     
     int indice = buscarPrimerIndiceLibreComprobandoExistenciaOtroAbierto(turismo);
     
