@@ -33,7 +33,7 @@ private int buscarPrimerIndiceLibreComprobandoExistencia(Turismo turismo) {
 		turismoEncontrado = true;
             else
 		if (alquileres[indiceVacio].getTurismo().equals(turismo.getMatricula()))
-                    throw new ExcepcionAlquilerVehiculos("Ya existe un turismo con ese DNI");
+                    throw new ExcepcionAlquilerVehiculos("Ya existe un alquiler con esa matricula");
 		else
                     indiceVacio++;
 	}
@@ -81,7 +81,7 @@ public void abrirAlquiler(Cliente cliente, Turismo turismo) {
     if (indiceNoSuperaTamano(indice))
 	alquileres[indice] = new Alquiler(cliente, turismo) ;
     else
-	throw new ExcepcionAlquilerVehiculos("El array de trabajos está lleno.");
+	throw new ExcepcionAlquilerVehiculos("El array de alquileres está lleno.");
 }
 
 // Metodo para cerrar un alquiler
@@ -91,7 +91,7 @@ public void cerrar(Cliente cliente, Turismo turismo) {
 		if (indiceNoSuperaTamano(indice))
 			alquileres[indice].close();
 		else
-			throw new ExcepcionAlquilerVehiculos("No hay ningún trabajo abierto para ese vehículo");
+			throw new ExcepcionAlquilerVehiculos("No hay ningún alquiler abierto para ese vehículo");
 }
 
 // Metodos de busqueda de indices 
@@ -120,7 +120,7 @@ private int buscarPrimerIndiceLibreComprobandoExistenciaOtroAbierto(Turismo turi
 		else
 			if (alquileres[indice].getTurismo().getMatricula().equals(turismo.getMatricula()) && 
 				alquileres[indice].getDias()>0)
-				throw new ExcepcionAlquilerVehiculos("Ya existe un trabajo abierto para este vehículo");
+				throw new ExcepcionAlquilerVehiculos("Ya existe un alquiler abierto para este vehículo");
 			else
                         	indice++;
 		}
