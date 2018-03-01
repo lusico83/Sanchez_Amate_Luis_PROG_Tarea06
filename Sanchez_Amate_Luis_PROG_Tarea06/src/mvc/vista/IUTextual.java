@@ -1,5 +1,5 @@
 
-package tarea06;
+package mvc.vista;
 
 import mvc.dominio.Cliente;
 import modelo.dao.Clientes;
@@ -12,7 +12,9 @@ import mvc.dominio.DireccionPostal;
 import utilidades.Entrada;
 
 
-public class Principal {
+
+public class IUTextual {
+    
     
     public static void main(String[] args) {
         
@@ -243,5 +245,10 @@ public class Principal {
 
         
     }
+    
+    
+    
+    
+    
     
 }
